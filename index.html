@@ -6,7 +6,357 @@
   <title>Luxurlashh • Certified Lash Artist • Boston, MA</title>
   <meta name="description" content="Luxurlashh — Certified Lash Artist in Boston, MA. Welcome to the laboratory. Book your appointment and explore lash sets, pricing, and policies." />
   <meta name="theme-color" content="#0b0b0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luxurlashh • Certified Lash Artist • Boston, MA</title>
+  <meta name="description" content="Luxurlashh — Certified Lash Artist in Boston, MA. Welcome to the laboratory. Book your appointment and explore lash sets, pricing, and policies." />
+  <meta name="theme-color" content="#0b0b0f" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#fff1f5;--bg2:#ffe4ec;--text:#2b1b22;--muted:rgba(245,242,243,.72);--line:rgba(255,255,255,.10);--pink:#f7c6d6;--pink2:#ffb9d1;--shadow:0 18px 60px rgba(0,0,0,.55);--radius:22px;--radius2:28px;--max:1120px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(1200px 700px at 20% -10%, rgba(247,198,214,.14), transparent 55%),radial-gradient(900px 600px at 85% 10%, rgba(255,215,226,.10), transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(11,11,15,.92),rgba(11,11,15,.62));border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .logo{width:44px;height:44px;border-radius:999px;background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.55), transparent 42%),linear-gradient(135deg, rgba(243,200,211,.95), rgba(255,215,226,.65));box-shadow:0 10px 30px rgba(243,200,211,.15);display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);position:relative;overflow:hidden}
+    .logo::after{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg, transparent, rgba(255,255,255,.20), transparent);animation:spin 7s linear infinite;opacity:.7}
+    .logo span{position:relative;font-family:"Playfair Display",serif;color:#19131a;font-weight:700;letter-spacing:.08em}
+    .brand h1{font-size:14px;margin:0;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    .links{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .links a{font-size:13px;color:rgba(43,27,34,.85);padding:10px 10px;border-radius:999px;transition:.25s ease;border:1px solid transparent}
+    .links a:hover{border-color:rgba(247,198,214,.45);background:rgba(243,200,211,.06)}
+    .cta{padding:10px 14px!important;border:1px solid rgba(247,198,214,.55)!important;background:linear-gradient(135deg, rgba(247,198,214,.20), rgba(255,215,226,.10));box-shadow:0 10px 30px rgba(247,198,214,.14)}
+    .hero{position:relative;padding:64px 0 26px;overflow:hidden}
+    .heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+    @media (max-width:920px){.heroGrid{grid-template-columns:1fr;gap:16px}.brand{min-width:auto}}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border-radius:var(--radius2);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card::before{content:"";position:absolute;inset:-1px;background:radial-gradient(800px 420px at 20% 0%, rgba(243,200,211,.14), transparent 55%),radial-gradient(700px 420px at 90% 30%, rgba(255,215,226,.10), transparent 60%);pointer-events:none}
+    .heroLeft{padding:28px 22px}
+    .pillRow{display:flex;gap:10px;flex-wrap:wrap;position:relative}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.25);font-size:12px;color:rgba(43,27,34,.85)}
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--pink);box-shadow:0 0 0 5px rgba(243,200,211,.10)}
+    .heroTitle{position:relative;margin:18px 0 10px;font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,56px);line-height:1.02;letter-spacing:.02em}
+    .heroTitle .accent{color:var(--pink2);text-shadow:0 8px 30px rgba(243,200,211,.15)}
+    .heroSub{position:relative;margin:0 0 18px;font-size:15px;color:var(--muted);line-height:1.65;max-width:56ch}
+    .btnRow{position:relative;display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.35);color:rgba(43,27,34,.92);padding:12px 14px;border-radius:999px;font-size:13px;display:inline-flex;align-items:center;gap:10px;transition:.25s ease;cursor:pointer;user-select:none}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(247,198,214,.55)}
+    .btnPrimary{border-color:rgba(247,198,214,.65);background:linear-gradient(135deg, rgba(243,200,211,.22), rgba(255,215,226,.12));box-shadow:0 14px 40px rgba(247,198,214,.14)}
+    .btnIcon{width:28px;height:28px;border-radius:999px;background:rgba(247,198,214,.20);border:1px solid rgba(247,198,214,.45);display:grid;place-items:center}
+    .heroRight{padding:18px;display:grid;grid-template-rows:auto 1fr;gap:12px}
+    .profile{display:flex;align-items:center;justify-content:space-between;gap:14px;position:relative;padding:14px 14px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.25)}
+    .profileLeft{display:flex;align-items:center;gap:12px;min-width:0}
+    .pfp{width:54px;height:54px;border-radius:999px;background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.55), transparent 42%),linear-gradient(135deg, rgba(243,200,211,.95), rgba(255,215,226,.65));border:1px solid rgba(255,255,255,.18);box-shadow:0 12px 30px rgba(247,198,214,.14);display:grid;place-items:center;position:relative;overflow:hidden}
+    .pfp::after{content:"";position:absolute;inset:-60%;background:conic-gradient(from 180deg, transparent, rgba(255,255,255,.22), transparent);animation:spin 10s linear infinite;opacity:.6}
+    .pfp span{position:relative;font-family:"Playfair Display",serif;color:#19131a;font-weight:700;letter-spacing:.1em}
+    .profile h2{margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .profile small{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+    .profileStats{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;justify-content:flex-end}
+    .stat{text-align:right;min-width:74px} .stat b{display:block;font-size:13px} .stat span{display:block;font-size:11px;color:var(--muted)}
+    .gridShots{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;position:relative}
+    .shot{aspect-ratio:1/1.1;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:radial-gradient(18px 18px at 30% 20%, rgba(255,255,255,.30), transparent 55%),linear-gradient(135deg, rgba(243,200,211,.16), rgba(0,0,0,.2));overflow:hidden;position:relative;transform:translateZ(0);transition:.25s ease}
+    .shot:hover{transform:translateY(-2px);border-color:rgba(247,198,214,.55)}
+    .shot::after{content:"";position:absolute;inset:-45%;background:conic-gradient(from 240deg, transparent, rgba(255,255,255,.18), transparent);animation:spin 12s linear infinite;opacity:.55}
+    .shot em{position:absolute;left:10px;bottom:10px;font-style:normal;font-size:11px;color:rgba(43,27,34,.75);letter-spacing:.08em;text-transform:uppercase}
+    @media (max-width:920px){.gridShots{grid-template-columns:repeat(3,1fr)}}
+    section{padding:44px 0}
+    .sectionHead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .sectionHead h3{margin:0;font-family:"Playfair Display",serif;font-size:26px;letter-spacing:.02em}
+    .sectionHead p{margin:0;color:var(--muted);font-size:13px;max-width:62ch;line-height:1.55}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:920px){.cols{grid-template-columns:1fr}}
+    .panel{border:1px solid var(--line);border-radius:var(--radius2);background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .panel::before{content:"";position:absolute;inset:-1px;background:radial-gradient(700px 380px at 25% 0%, rgba(247,198,214,.14), transparent 60%);pointer-events:none;opacity:.9}
+    .panel *{position:relative}
+    .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+    .list li{display:flex;gap:10px;align-items:flex-start;padding:12px 12px;border:1px solid rgba(255,255,255,.10);border-radius:18px;background:rgba(0,0,0,.22)}
+    .check{width:22px;height:22px;border-radius:99px;background:rgba(247,198,214,.20);border:1px solid rgba(247,198,214,.45);display:grid;place-items:center;flex:0 0 auto;margin-top:1px}
+    .list b{display:block;font-size:13px;margin-bottom:2px} .list span{display:block;font-size:12px;color:var(--muted);line-height:1.5}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:920px){.services{grid-template-columns:1fr}}
+    .svc{padding:16px;border-radius:var(--radius2);border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(255,255,255,.03));position:relative;overflow:hidden;transition:.25s ease}
+    .svc:hover{transform:translateY(-2px);border-color:rgba(247,198,214,.55)}
+    .svc h4{margin:8px 0 6px;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+    .svc p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}
+    .price{margin-top:12px;display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(255,255,255,.10);color:rgba(245,242,243,.90);font-size:13px}
+    .tag{font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid rgba(247,198,214,.45);background:rgba(243,200,211,.08);color:rgba(43,27,34,.85)}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .g{border-radius:22px;border:1px solid rgba(255,255,255,.12);background:radial-gradient(18px 18px at 30% 20%, rgba(255,255,255,.30), transparent 55%),linear-gradient(135deg, rgba(247,198,214,.20), rgba(0,0,0,.25));min-height:150px;position:relative;overflow:hidden;transition:.25s ease}
+    .g:hover{transform:translateY(-2px);border-color:rgba(247,198,214,.55)}
+    .g::after{content:"";position:absolute;inset:-50%;background:conic-gradient(from 180deg, transparent, rgba(255,255,255,.16), transparent);animation:spin 16s linear infinite;opacity:.55}
+    .g span{position:absolute;left:14px;bottom:14px;font-size:12px;color:rgba(245,242,243,.78);letter-spacing:.08em;text-transform:uppercase}
+    .g1{grid-column:span 5;min-height:240px} .g2{grid-column:span 4} .g3{grid-column:span 3} .g4{grid-column:span 4} .g5{grid-column:span 4} .g6{grid-column:span 4}
+    @media (max-width:920px){.g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 12}}
+    .bookingGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+    @media (max-width:920px){.bookingGrid{grid-template-columns:1fr}}
+    form{display:grid;gap:10px} label{font-size:12px;color:rgba(245,242,243,.84)}
+    input,select,textarea{width:100%;padding:12px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.30);color:var(--text);outline:none;font-family:inherit;font-size:13px;transition:.2s ease}
+    input:focus,select:focus,textarea:focus{border-color:rgba(247,198,214,.65);box-shadow:0 0 0 5px rgba(243,200,211,.10)}
+    textarea{min-height:110px;resize:vertical} .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:520px){.two{grid-template-columns:1fr}}
+    .note{font-size:12px;color:var(--muted);line-height:1.55;border-top:1px solid rgba(255,255,255,.10);padding-top:12px;margin-top:8px}
+    footer{padding:26px 0 40px;border-top:1px solid var(--line);color:rgba(43,27,34,.70);font-size:12px}
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .miniLinks{display:flex;gap:12px;flex-wrap:wrap} .miniLinks a{color:rgba(43,27,34,.75)} .miniLinks a:hover{color:rgba(255,185,209,.95)}
+    .reveal{opacity:0;transform:translateY(14px);transition:.7s ease} .reveal.in{opacity:1;transform:translateY(0)}
+    .particles{position:absolute;inset:0;pointer-events:none;opacity:.55;mask-image:radial-gradient(circle at 50% 25%, black 35%, transparent 70%)}
+    .p{position:absolute;width:6px;height:6px;border-radius:999px;background:rgba(243,200,211,.60);filter:blur(.2px);animation:float 10s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0) translateX(0);opacity:.35}50%{transform:translateY(-26px) translateX(10px);opacity:.85}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(30px);background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:10px 12px;color:rgba(245,242,243,.88);font-size:12px;opacity:0;pointer-events:none;transition:.35s ease;backdrop-filter:blur(12px);box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    .toast .bubble{width:22px;height:22px;border-radius:999px;background:rgba(247,198,214,.20);border:1px solid rgba(247,198,214,.45);display:grid;place-items:center}
+  
+@media (max-width: 600px){
+  .topbar .nav{padding:10px 0;}
+  .logo{width:36px;height:36px;}
+  .brand h1{font-size:12px;letter-spacing:.12em;}
+  .brand p{font-size:10px;}
+  .hero{padding:36px 0 10px;}
+  .heroLeft{padding:18px 16px;}
+  .heroTitle{font-size:28px;}
+  .heroSub{font-size:13px;}
+  .pill{font-size:10px;padding:6px 9px;}
+  .btn{padding:9px 12px;font-size:12px;}
+  .profile{padding:10px;}
+  .pfp{width:44px;height:44px;}
+  .profile h2{font-size:12px;}
+  .gridShots{gap:6px;}
+}
+
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Luxurlashh Home">
+          <div class="logo" aria-hidden="true"><span>LL</span></div>
+          <div><h1>Luxurlash</h1><p>Certified Lash Artist • Boston, MA</p></div>
+        </a>
+        <nav class="links" aria-label="Primary">
+          <a href="#services">services</a>
+          <a href="#gallery">lash gallery</a>
+          <a href="#policies">policies</a>
+          <a href="#booking" class="cta">book now</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <header class="hero">
+      <div class="particles" aria-hidden="true" id="particles"></div>
+      <div class="wrap">
+        <div class="heroGrid">
+          <div class="card heroLeft reveal">
+            <div class="pillRow">
+              <span class="pill"><span class="dot"></span> welcome to the laboratory</span>
+              <span class="pill">travel tech</span>
+              <span class="pill">♡ lash artistry</span>
+            </div>
+            <h2 class="heroTitle">Luxury lashes, <span class="accent">precision</span> energy.</h2>
+            <p class="heroSub">
+              Clean sets. Soft glam. Flawless retention. Serving Boston, MA — with a calm, luxury experience from check-in to aftercare.
+              <br><br><span style="color:rgba(255,185,209,.95)">♡ Read policy before booking.</span>
+            </p>
+            <div class="btnRow">
+              <a class="btn btnPrimary" href="#booking"><span class="btnIcon">♡</span>book appointment</a>
+              <a class="btn" href="#gallery"><span class="btnIcon">⌁</span>view lash gallery</a>
+              <a class="btn" href="https://luxurlash.as.me" target="_blank" rel="noreferrer"><span class="btnIcon">↗</span>open booking link</a>
+            </div>
+            <div class="note"><b style="color:rgba(43,27,34,.92);font-weight:600;">Tip:</b> Replace the gallery placeholders with her real lash photos for an instant “high-end” look.</div>
+          </div>
+
+          <aside class="card heroRight reveal">
+            <div class="profile">
+              <div class="profileLeft">
+                <div class="pfp" aria-hidden="true"><span>LL</span></div>
+                <div style="min-width:0">
+                  <h2>luxurlashh</h2>
+                  <small>Beauty, cosmetic & personal care</small>
+                </div>
+              </div>
+              <div class="profileStats" aria-label="Profile stats">
+                <div class="stat"><b>64</b><span>posts</span></div>
+                <div class="stat"><b>837</b><span>followers</span></div>
+                <div class="stat"><b>68</b><span>following</span></div>
+              </div>
+            </div>
+            <div class="gridShots" aria-label="Mini gallery">
+              <div class="shot"><em>classic</em></div><div class="shot"><em>hybrid</em></div><div class="shot"><em>volume</em></div>
+              <div class="shot"><em>wispy</em></div><div class="shot"><em>refill</em></div><div class="shot"><em>aftercare</em></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="sectionHead reveal"><div><h3>Services + pricing</h3><p>Use this as a clean starting price list. Swap the prices/names to match her actual menu.</p></div></div>
+        <div class="services">
+          <div class="svc reveal"><div class="tag">Most requested</div><h4>Hybrid Full Set</h4><p>Balanced texture: classic + volume mix for a soft glam look with definition.</p><div class="price"><span>from</span><b>$140</b></div></div>
+          <div class="svc reveal"><div class="tag">Signature</div><h4>Volume Full Set</h4><p>Full, fluffy, and bold—custom fans for density and a luxury finish.</p><div class="price"><span>from</span><b>$160</b></div></div>
+          <div class="svc reveal"><div class="tag">Natural</div><h4>Classic Full Set</h4><p>Clean and timeless—one extension per lash for everyday elegance.</p><div class="price"><span>from</span><b>$120</b></div></div>
+          <div class="svc reveal"><div class="tag">Maintenance</div><h4>2-Week Fill</h4><p>Keep your set fresh. Recommended for retention + lash health.</p><div class="price"><span>from</span><b>$70</b></div></div>
+          <div class="svc reveal"><div class="tag">Maintenance</div><h4>3-Week Fill</h4><p>For clients with lighter shedding or longer retention schedules.</p><div class="price"><span>from</span><b>$85</b></div></div>
+          <div class="svc reveal"><div class="tag">Add-on</div><h4>Lash Bath + Aftercare</h4><p>Deep cleanse + aftercare guidance for better wear and comfort.</p><div class="price"><span>add</span><b>$15</b></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="sectionHead reveal"><div><h3>Lash gallery</h3><p>Placeholders for now — swap in real client photos.</p></div></div>
+        <div class="gallery">
+          <div class="g g1 reveal"><span>signature sets</span></div>
+          <div class="g g2 reveal"><span>hybrid</span></div>
+          <div class="g g3 reveal"><span>classic</span></div>
+          <div class="g g4 reveal"><span>volume</span></div>
+          <div class="g g5 reveal"><span>wispy</span></div>
+          <div class="g g6 reveal"><span>fills</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="policies">
+      <div class="wrap">
+        <div class="sectionHead reveal"><div><h3>Policies</h3><p>Clear policies make bookings smoother and keep the brand feeling premium.</p></div></div>
+        <div class="cols">
+          <div class="panel reveal">
+            <ul class="list">
+              <li><div class="check">✓</div><div><b>Arrive on time</b><span>Please arrive 5 minutes early. Late arrivals may be rescheduled.</span></div></li>
+              <li><div class="check">✓</div><div><b>Deposit + cancellations</b><span>Deposits secure your appointment. 24-hour notice required.</span></div></li>
+              <li><div class="check">✓</div><div><b>Come with clean lashes</b><span>No mascara or strip-lash glue. Lash bath available.</span></div></li>
+            </ul>
+          </div>
+          <div class="panel reveal">
+            <ul class="list">
+              <li><div class="check">✓</div><div><b>No extra guests</b><span>Please come alone (unless discussed).</span></div></li>
+              <li><div class="check">✓</div><div><b>Fill eligibility</b><span>Fills require ~40% of extensions remaining.</span></div></li>
+              <li><div class="check">✓</div><div><b>Aftercare matters</b><span>Clean daily, avoid oils, don’t pick.</span></div></li>
+            </ul>
+            <div class="note">Want these to match her exact policy text from IG? Send it and I’ll plug it in clean.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="wrap">
+        <div class="sectionHead reveal"><div><h3>Book an appointment</h3><p>Best option: send clients directly to her booking link. Backup: request form.</p></div></div>
+        <div class="bookingGrid">
+          <div class="panel reveal">
+            <h4 style="margin:0 0 10px;letter-spacing:.12em;text-transform:uppercase;font-size:14px;">Quick booking links</h4>
+            <div class="btnRow" style="margin:0 0 10px;">
+              <a class="btn btnPrimary" href="https://luxurlash.as.me" target="_blank" rel="noreferrer"><span class="btnIcon">↗</span>book on luxurlash.as.me</a>
+              <a class="btn" href="https://instagram.com/luxurlashh" target="_blank" rel="noreferrer"><span class="btnIcon">⌁</span>open instagram</a>
+            </div>
+            <div class="note">If you want a “real calendar” embedded: Square Appointments / Acuity / GlossGenius.</div>
+          </div>
+
+          <div class="panel reveal">
+            <h4 style="margin:0 0 10px;letter-spacing:.12em;text-transform:uppercase;font-size:14px;">Request a slot</h4>
+            <form id="bookForm">
+              <div class="two">
+                <div><label for="name">Name</label><input id="name" name="name" placeholder="Your name" required></div>
+                <div><label for="phone">Phone</label><input id="phone" name="phone" placeholder="(000) 000-0000"></div>
+              </div>
+              <div class="two">
+                <div>
+                  <label for="service">Service</label>
+                  <select id="service" name="service" required>
+                    <option value="" selected disabled>Select service</option>
+                    <option>Classic Full Set</option><option>Hybrid Full Set</option><option>Volume Full Set</option>
+                    <option>2-Week Fill</option><option>3-Week Fill</option><option>Lash Bath + Aftercare</option>
+                  </select>
+                </div>
+                <div><label for="date">Preferred date</label><input id="date" name="date" type="date"></div>
+              </div>
+              <div><label for="msg">Notes</label><textarea id="msg" name="msg" placeholder="Preferred time, inspo, allergies, etc."></textarea></div>
+              <button class="btn btnPrimary" type="submit"><span class="btnIcon">✉</span>send request</button>
+              <div class="note">Going live? Replace this mailto with a real form endpoint (Formspree/Formspark).</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div>© <span id="year"></span> Luxurlashh • Boston, MA</div>
+          <div class="miniLinks"><a href="#services">services</a><a href="#gallery">gallery</a><a href="#policies">policies</a><a href="#booking">booking</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><div class="bubble">♡</div><div id="toastText">Sent.</div></div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const revealEls=[...document.querySelectorAll(".reveal")];
+    const io=new IntersectionObserver((entries)=>{for(const e of entries){if(e.isIntersecting)e.target.classList.add("in")}}, {threshold:.12});
+    revealEls.forEach(el=>io.observe(el));
+
+    const particles=document.getElementById("particles");
+    for(let i=0;i<18;i++){
+      const d=document.createElement("div"); d.className="p";
+      d.style.left=(Math.random()*100)+"%";
+      d.style.top=(Math.random()*100)+"%";
+      const size=4+Math.random()*6;
+      d.style.width=size+"px"; d.style.height=size+"px";
+      d.style.animationDuration=(8+Math.random()*10)+"s";
+      d.style.animationDelay=(Math.random()*-10)+"s";
+      d.style.opacity=(0.25+Math.random()*0.5).toFixed(2);
+      particles.appendChild(d);
+    }
+
+    const toast=document.getElementById("toast");
+    const toastText=document.getElementById("toastText");
+    let toastTimer=null;
+    function showToast(text){
+      toastText.textContent=text;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer=setTimeout(()=>toast.classList.remove("show"),2600);
+    }
+
+    document.getElementById("bookForm").addEventListener("submit",(e)=>{
+      e.preventDefault();
+      const name=document.getElementById("name").value.trim();
+      const phone=document.getElementById("phone").value.trim();
+      const service=document.getElementById("service").value;
+      const date=document.getElementById("date").value;
+      const msg=document.getElementById("msg").value.trim();
+      const subject=encodeURIComponent(`Luxurlashh Booking Request • ${service}`);
+      const body=encodeURIComponent(`Name: ${name}
+Phone: ${phone}
+Service: ${service}
+Preferred date: ${date}
+
+Notes:
+${msg}
+
+(Submitted from website)`);
+      const toEmail="yourbusiness@email.com";
+      window.location.href=`mailto:${toEmail}?subject=${subject}&body=${body}`;
+      showToast("Opening email to send your request…");
+    });
+  </script>
+</body>
+</html>
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
