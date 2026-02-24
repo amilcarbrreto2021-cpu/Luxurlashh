@@ -86,7 +86,35 @@
     .g::after{content:"";position:absolute;inset:-50%;background:conic-gradient(from 180deg, transparent, rgba(255,255,255,.16), transparent);animation:spin 16s linear infinite;opacity:.55}
     .g span{position:absolute;left:14px;bottom:14px;font-size:12px;color:rgba(245,242,243,.78);letter-spacing:.08em;text-transform:uppercase}
     .g1{grid-column:span 5;min-height:240px} .g2{grid-column:span 4} .g3{grid-column:span 3} .g4{grid-column:span 4} .g5{grid-column:span 4} .g6{grid-column:span 4}
-    @media (max-width:920px){.g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 12}}
+/* ===== Lash Gallery (fixed + better showcase) ===== */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.gallery .g{position:relative;overflow:hidden;border-radius:22px;aspect-ratio:4/5}
+.gallery .g1{aspect-ratio:4/6}
+.gallery .g img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:relative;z-index:1;transition:transform .4s ease}
+.gallery .g:hover img{transform:scale(1.05)}
+.gallery .g span{position:absolute;left:14px;bottom:14px;z-index:2}
+.gallery .g::after{z-index:0}
+    /* Mobile-friendly gallery grid */
+@media (max-width: 920px){
+  .gallery{grid-template-columns:repeat(2, 1fr); gap:10px}
+  .gallery .g{grid-column:span 1; aspect-ratio:1/1} /* clean 2-col squares */
+  .gallery .g1{grid-column:span 2; aspect-ratio:16/9} /* featured wide tile */
+}
+@media (max-width: 520px){
+  .gallery{gap:10px}
+  .gallery .g{border-radius:18px}
+  .gallery .g span{left:12px; bottom:12px; font-size:11px}
+}
+
+/* ===== Desktop polish ===== */
+@media (min-width: 921px){
+  /* Give the featured tile more presence on desktop */
+  .gallery .g1{grid-column: span 6; aspect-ratio: 16 / 12;}
+  .gallery .g2{grid-column: span 3;}
+  .gallery .g3{grid-column: span 3;}
+  .gallery .g4,.gallery .g5,.gallery .g6{grid-column: span 4;}
+}
+
     .bookingGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
     @media (max-width:920px){.bookingGrid{grid-template-columns:1fr}}
     form{display:grid;gap:10px} label{font-size:12px;color:rgba(245,242,243,.84)}
@@ -151,6 +179,92 @@
   section{padding:34px 0;}
 }
 
+/* ===== Lightbox (tap-to-fullscreen) ===== */
+.lightbox{
+  position:fixed; inset:0;
+  display:none;
+  align-items:center; justify-content:center;
+  background:rgba(0,0,0,.78);
+  backdrop-filter: blur(10px);
+  z-index:2000;
+  padding:18px;
+}
+.lightbox.show{display:flex}
+.lightboxInner{
+  width:min(920px, 100%);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.38));
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+.lightboxImgWrap{
+  position:relative;
+  background:rgba(0,0,0,.35);
+}
+.lightboxImg{
+  width:100%;
+  height:auto;
+  max-height:78vh;
+  display:block;
+  object-fit:contain;
+}
+.lightboxBar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 14px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.lightboxTitle{
+  font-size:12px;
+  color:rgba(245,242,243,.85);
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.lbBtn{
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.35);
+  color:rgba(245,242,243,.92);
+  padding:10px 12px;
+  border-radius:999px;
+  font-size:12px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.lbBtn:hover{border-color:rgba(247,198,214,.60); transform:translateY(-1px)}
+.lbClose{
+  position:absolute;
+  top:10px; right:10px;
+}
+.lbNav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  width:44px; height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.35);
+  color:rgba(245,242,243,.92);
+  cursor:pointer;
+  transition:.2s ease;
+  user-select:none;
+}
+.lbNav:hover{border-color:rgba(247,198,214,.60)}
+.lbPrev{left:10px}
+.lbNext{right:10px}
+@media (max-width: 520px){
+  .lightboxInner{border-radius:18px}
+  .lbNav{width:40px;height:40px}
+}
+
 </style>
 </head>
 <body>
@@ -192,7 +306,6 @@
               <a class="btn" href="#gallery"><span class="btnIcon">⌁</span>view lash gallery</a>
               <a class="btn" href="https://luxurlash.as.me" target="_blank" rel="noreferrer"><span class="btnIcon">↗</span>open booking link</a>
             </div>
-            <div class="note"><b style="color:rgba(245,242,243,.92);font-weight:600;">Tip:</b> Replace the gallery placeholders with her real lash photos for an instant “high-end” look.</div>
           </div>
 
           <aside class="card heroRight reveal">
@@ -235,21 +348,58 @@
 
     <section id="gallery">
       <div class="wrap">
-        <div class="sectionHead reveal"><div><h3>Lash gallery</h3><p>Placeholders for now — swap in real client photos.</p></div></div>
-        <div class="gallery">
-          <div class="g g1 reveal"><span>signature sets</span></div>
-          <div class="g g2 reveal"><span>hybrid</span></div>
-          <div class="g g3 reveal"><span>classic</span></div>
-          <div class="g g4 reveal"><span>volume</span></div>
-          <div class="g g5 reveal"><span>wispy</span></div>
-          <div class="g g6 reveal"><span>fills</span></div>
+        <div class="sectionHead reveal">
+          <div>
+            <h3>Lash gallery</h3>
+            <p>Tap any photo to view close-up results.</p>
+          </div>
         </div>
+
+<div class="gallery">
+
+  <div class="g g1 reveal">
+    <img src="images/lash1.jpg" alt="Signature lash set">
+    <span>signature sets</span>
+  </div>
+
+  <div class="g g2 reveal">
+    <img src="images/lash2.jpg" alt="Hybrid lashes">
+    <span>hybrid</span>
+  </div>
+
+  <div class="g g3 reveal">
+    <img src="images/lash3.jpg" alt="Classic lashes">
+    <span>classic</span>
+  </div>
+
+  <div class="g g4 reveal">
+    <img src="images/lash4.jpg" alt="Volume lashes">
+    <span>volume</span>
+  </div>
+
+  <div class="g g5 reveal">
+    <img src="images/lash5.jpg" alt="Wispy lashes">
+    <span>wispy</span>
+  </div>
+
+  <div class="g g6 reveal">
+    <img src="images/lash6.jpg" alt="Lash fills">
+    <span>fills</span>
+  </div>
+
+</div>
       </div>
     </section>
 
     <section id="policies">
       <div class="wrap">
-        <div class="sectionHead reveal"><div><h3>Policies</h3><p>Clear policies make bookings smoother and keep the brand feeling premium.</p></div></div>
+        <div class="sectionHead reveal">
+          <div>
+            <h3>Policies</h3>
+            <p>Please read before booking — this keeps appointments smooth and the experience premium.</p>
+          </div>
+        </div>
+
         <div class="cols">
           <div class="panel reveal">
             <ul class="list">
@@ -258,13 +408,14 @@
               <li><div class="check">✓</div><div><b>Come with clean lashes</b><span>No mascara or strip-lash glue. Lash bath available.</span></div></li>
             </ul>
           </div>
+
           <div class="panel reveal">
             <ul class="list">
               <li><div class="check">✓</div><div><b>No extra guests</b><span>Please come alone (unless discussed).</span></div></li>
               <li><div class="check">✓</div><div><b>Fill eligibility</b><span>Fills require ~40% of extensions remaining.</span></div></li>
               <li><div class="check">✓</div><div><b>Aftercare matters</b><span>Clean daily, avoid oils, don’t pick.</span></div></li>
             </ul>
-            <div class="note">Want these to match her exact policy text from IG? Send it and I’ll plug it in clean.</div>
+            <div class="note">Questions before booking? DM on Instagram or use the request form below.</div>
           </div>
         </div>
       </div>
@@ -272,7 +423,7 @@
 
     <section id="booking">
       <div class="wrap">
-        <div class="sectionHead reveal"><div><h3>Book an appointment</h3><p>Best option: send clients directly to her booking link. Backup: request form.</p></div></div>
+        <div class="sectionHead reveal"><div><h3>Book an appointment</h3></div></div>
         <div class="bookingGrid">
           <div class="panel reveal">
             <h4 style="margin:0 0 10px;letter-spacing:.12em;text-transform:uppercase;font-size:14px;">Quick booking links</h4>
@@ -372,6 +523,94 @@ ${msg}
       window.location.href=`mailto:${toEmail}?subject=${subject}&body=${body}`;
       showToast("Opening email to send your request…");
     });
+
+// ===== Lightbox for gallery =====
+(function(){
+  const imgs = Array.from(document.querySelectorAll('#gallery .gallery img'));
+  if(!imgs.length) return;
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  const lbDownload = document.getElementById('lbDownload');
+
+  let idx = 0;
+
+  function setImage(i){
+    idx = (i + imgs.length) % imgs.length;
+    const el = imgs[idx];
+    lbImg.src = el.getAttribute('src');
+    lbImg.alt = el.getAttribute('alt') || 'Lash photo';
+    const label = el.closest('.g')?.querySelector('span')?.textContent?.trim() || lbImg.alt;
+    lbTitle.textContent = label;
+    lbDownload.onclick = () => window.open(lbImg.src, '_blank', 'noopener,noreferrer');
+  }
+
+  function openLb(i){
+    setImage(i);
+    lb.classList.add('show');
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(){
+    lb.classList.remove('show');
+    lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  imgs.forEach((el, i)=>{
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', ()=> openLb(i));
+  });
+
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLb(); });
+  lbPrev.addEventListener('click', ()=> setImage(idx-1));
+  lbNext.addEventListener('click', ()=> setImage(idx+1));
+
+  document.addEventListener('keydown', (e)=>{
+    if(!lb.classList.contains('show')) return;
+    if(e.key === 'Escape') closeLb();
+    if(e.key === 'ArrowLeft') setImage(idx-1);
+    if(e.key === 'ArrowRight') setImage(idx+1);
+  });
+
+  // Basic swipe (mobile)
+  let startX = 0;
+  lbImg.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+  lbImg.addEventListener('touchend', (e)=>{
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+    if(Math.abs(dx) > 40){
+      if(dx > 0) setImage(idx-1);
+      else setImage(idx+1);
+    }
+  }, {passive:true});
+})();
   </script>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightboxInner" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lbBtn lbClose" id="lbClose" type="button" aria-label="Close">✕</button>
+
+    <div class="lightboxImgWrap">
+      <button class="lbNav lbPrev" id="lbPrev" type="button" aria-label="Previous">‹</button>
+      <img class="lightboxImg" id="lbImg" src="" alt="">
+      <button class="lbNav lbNext" id="lbNext" type="button" aria-label="Next">›</button>
+    </div>
+
+    <div class="lightboxBar">
+      <div class="lightboxTitle" id="lbTitle">Photo</div>
+      <div style="display:flex; gap:8px;">
+        <button class="lbBtn" id="lbDownload" type="button" aria-label="Open image in new tab">open</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
